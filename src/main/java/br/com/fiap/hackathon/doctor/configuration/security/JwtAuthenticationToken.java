@@ -10,11 +10,13 @@ public class JwtAuthenticationToken extends AbstractAuthenticationToken {
 
     private final UserDetails principal;
     private final String token;
+    private final String userIdentifier;
 
-    public JwtAuthenticationToken(UserDetails principal, String token, Collection<? extends GrantedAuthority> authorities) {
+    public JwtAuthenticationToken(UserDetails principal, String token, Collection<? extends GrantedAuthority> authorities, String userIdentifier) {
         super(authorities);
         this.principal = principal;
         this.token = token;
+        this.userIdentifier = userIdentifier;
         setAuthenticated(true);
     }
 
@@ -26,6 +28,10 @@ public class JwtAuthenticationToken extends AbstractAuthenticationToken {
     @Override
     public Object getPrincipal() {
         return principal;
+    }
+
+    public String getUserIdentifier() {
+        return userIdentifier;
     }
 
     @Override
