@@ -53,6 +53,7 @@ class AppointmentServiceTest {
         appointment.setHospital(hospital);
     }
 
+    // TODO: AJUSTAR
     @Test
     void shouldMakeScheduledAppointmentSuccessfully() {
         when(doctorService.findDoctorByCrm(anyString())).thenReturn(doctor);
@@ -73,7 +74,7 @@ class AppointmentServiceTest {
         verify(hospitalService, times(1)).findHospitalByName(anyString());
     }
 
-
+    // TODO: AJUSTAR
     @Test
     void shouldThrowExceptionIfScheduledDateIsBeforeToday() {
         appointment.setScheduled(LocalDateTime.now().minusDays(1));
@@ -85,6 +86,7 @@ class AppointmentServiceTest {
         assertEquals("m=scheduledDateDontBeforeToday Schduled date don't schedule after today", thrown.getMessage());
     }
 
+    // TODO: AJUSTAR
     @Test
     void shouldThrowExceptionIfDoctorHasAppointmentAtTheSameTime() {
         when(appointmentRepository.existsAppointmentWithScheduledAndDoctor(
