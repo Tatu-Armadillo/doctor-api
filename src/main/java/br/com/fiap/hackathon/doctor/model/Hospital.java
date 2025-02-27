@@ -23,4 +23,8 @@ public class Hospital {
     @Column(name = "address")
     private String address;
 
+    public Hospital(String name) {
+        this.name = name;
+    }
+
 }

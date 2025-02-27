@@ -28,6 +28,11 @@ public class Doctor {
     @Column(name = "professional_contact")
     private String professionalContact;
 
+    public Doctor(String crm, String userIdentifier) {
+        this.crm = crm;
+        this.userIdentifier = userIdentifier;
+    }
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(schema = "hackaton", name = "speciality_doctor", 
         joinColumns = @JoinColumn(name = "id_doctor", foreignKey = @ForeignKey(name = "fk_speciality_doctor_doctor")), 
