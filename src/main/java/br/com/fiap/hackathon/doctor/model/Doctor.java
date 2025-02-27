@@ -19,7 +19,7 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "active_crm")
+    @Column(name = "active_crm", unique = true)
     private String crm;
     
     @Column(name = "user_identifier")

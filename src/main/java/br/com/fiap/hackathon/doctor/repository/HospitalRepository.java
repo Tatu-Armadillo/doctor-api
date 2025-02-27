@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import br.com.fiap.hackathon.doctor.model.Doctor;
+import br.com.fiap.hackathon.doctor.model.Hospital;
 
 @Repository
-public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+public interface HospitalRepository extends JpaRepository<Hospital, Long> {
 
-    Optional<Doctor> findDoctorByCrm(@Param("crm") String crm);
+    Optional<Hospital> findHospitalByName(@Param("name") String name);
 }
