@@ -24,7 +24,7 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
 
-    @Operation(tags = { "appointment" }, summary = "Create a new appointment")
+    @Operation(tags = { "Appointment" }, summary = "Create a new appointment")
     @PostMapping("/scheduled")
     @Transactional
     public ResponseEntity<Appointment> create(@RequestBody final MakeAppointmentDto data) {
