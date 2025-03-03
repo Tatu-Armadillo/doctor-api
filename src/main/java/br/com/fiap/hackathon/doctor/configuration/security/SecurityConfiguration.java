@@ -25,7 +25,7 @@ public class SecurityConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/actuator/**").permitAll()
-                        .requestMatchers("/doctor/**").hasRole("DOCTOR")
+                        .requestMatchers("/doctor/create/").hasRole("DOCTOR")
                         .requestMatchers("/doctor/appointment/scheduled").hasRole("PATIENT")
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
