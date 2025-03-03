@@ -34,8 +34,8 @@ public class AppointmentService {
     }
 
     private void scheduledDateDontBeforeToday(final LocalDateTime scheduled) {
-        if (scheduled.isAfter(LocalDateTime.now())) {
-            throw new BusinessException("m=scheduledDateDontBeforeToday Schduled date don't schedule after today");
+        if (scheduled.isBefore(LocalDateTime.now())) {
+            throw new BusinessException("m=scheduledDateDontBeforeToday Schduled date don't schedule Before today");
         }
     }
 
