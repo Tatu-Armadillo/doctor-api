@@ -8,14 +8,12 @@ import br.com.fiap.hackathon.doctor.model.Hospital;
 
 public record MakeAppointmentDto(
         LocalDateTime scheduledDate,
-        String patientIdentifier,
         String crm,
         String hospitalName) {
 
     public Appointment toEntity() {
         final var entity = new Appointment();
         entity.setScheduled(this.scheduledDate());
-        entity.setPatient(this.patientIdentifier());
 
         final var doctor = new Doctor();
         doctor.setCrm(this.crm());

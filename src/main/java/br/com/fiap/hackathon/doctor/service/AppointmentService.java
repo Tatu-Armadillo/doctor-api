@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.stereotype.Service;
 
+import br.com.fiap.hackathon.doctor.configuration.security.LoggedUser;
 import br.com.fiap.hackathon.doctor.exception.BusinessException;
 import br.com.fiap.hackathon.doctor.model.Appointment;
 import br.com.fiap.hackathon.doctor.repository.AppointmentRepository;
@@ -28,6 +29,7 @@ public class AppointmentService {
         appointment.setHospital(hospital);
 
         appointment.setCanceled(false);
+        appointment.setPatient(LoggedUser.get().getUserIdentifier());
         return this.appointmentRepository.save(appointment);
     }
 
