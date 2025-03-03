@@ -43,7 +43,7 @@ alter table if exists hackaton.appointment add constraint fk_hospital_appointmen
 INSERT INTO hackaton.hospital (name, address) VALUES
     ('Hospital São Paulo', 'Rua das Flores, 123, São Paulo - SP'),
     ('Hospital Santa Catarina', 'Avenida Paulista, 987, São Paulo - SP'),
-    ('Hospital das Clínicas', 'Rua Dr. Arnaldo, 455, São Paulo - SP');
+    ('Hospital das Clinicas', 'Rua Dr. Arnaldo, 455, São Paulo - SP');
 
 INSERT INTO hackaton.doctor (active_crm, user_identifier, professional_contact) VALUES
     ('123456SP', 'dr.joao', 'joao.medico@email.com'),
