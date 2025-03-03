@@ -17,26 +17,26 @@ services:
     networks:
       - doctor-db-network
 
-  # doctor-api:
-  #   build: .
-  #   restart: always
-  #   container_name: doctor-api
-  #   environment:
-  #     PORT_APP: 9191
-  #     DB_SGDB: postgresql
-  #     DB_HOST: doctor-db
-  #     DB_PORT: 5432
-  #     DB_NAME: doctor
-  #     DB_SCHEMA: hackaton
-  #     DB_USER: doctor
-  #     DB_PASSWORD: doctor
-  #     JWT_SECRET: 123456789
-  #   ports:
-  #     - "9191:9191"
-  #   depends_on:
-  #     - doctor-db
-  #   networks:
-  #     - doctor-db-network
+  doctor-api:
+    build: .
+    restart: always
+    container_name: doctor-api
+    environment:
+      PORT_APP: 9191
+      DB_SGDB: postgresql
+      DB_HOST: doctor-db
+      DB_PORT: 5432
+      DB_NAME: doctor
+      DB_SCHEMA: hackaton
+      DB_USER: doctor
+      DB_PASSWORD: doctor
+      JWT_SECRET: 123456789
+    ports:
+      - "9191:9191"
+    depends_on:
+      - doctor-db
+    networks:
+      - doctor-db-network
 
 networks:
   doctor-db-network:
