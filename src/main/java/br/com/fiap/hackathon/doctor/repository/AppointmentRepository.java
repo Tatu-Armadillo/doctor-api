@@ -19,5 +19,5 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     List<Appointment> existsAppointmentWithScheduledAndDoctor(
             @Param("plusScheduled") LocalDateTime plusScheduled,
             @Param("minusScheduled") LocalDateTime minusScheduled,
-            @Param("doctor") String crm);
+            @Param("crm") String crm);
 }
