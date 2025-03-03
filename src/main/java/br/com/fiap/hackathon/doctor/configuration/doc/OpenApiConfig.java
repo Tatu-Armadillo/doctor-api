@@ -16,9 +16,9 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Authorization")
+                        .title("Doctor")
                         .version("v1")
-                        .description("Authorization API")
+                        .description("Doctor API")
                         .termsOfService("https://github.com/Tatu-Armadillo")
                         .license(new License()
                                 .name("Apache 2.0")
