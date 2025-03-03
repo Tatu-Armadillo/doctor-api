@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fiap.hackathon.doctor.model.Doctor;
+import br.com.fiap.hackathon.doctor.record.CreateDockerDto;
 import br.com.fiap.hackathon.doctor.service.DoctorService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -24,8 +25,8 @@ public class DoctorController {
     @Operation(tags = { "Doctor" }, summary = "Create a new doctor")
     @PostMapping("/create")
     @Transactional
-    public ResponseEntity<Doctor> create(@RequestBody final Doctor data) {
-        final var response = this.doctorService.create(data);
+    public ResponseEntity<Doctor> create(@RequestBody final CreateDockerDto data) {
+        final var response = this.doctorService.create(CreateDockerDto.toEntity(data));
         return ResponseEntity.ok(response);
     }
     
